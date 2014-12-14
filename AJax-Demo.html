@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax Demo</title>
+    <script>
+        function loadDoc(){
+            console.log("B");
+            var httpRequest;
+            httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = function(){
+            document.getElementById("viewChange").innerHTML = httpRequest.responseText;
+            httpRequest.open("GET", "Ajax---Let-s-Get-Started/data.txt",true);
+            httpRequest.send();
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="click">
+<input type="button" value="Click Me!" onclick="loadDoc()">
+</div>
+<div id="viewChange">
+</div>
+</body>
+</html>
